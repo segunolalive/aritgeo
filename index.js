@@ -70,8 +70,13 @@ function isGeometric (arr) {
   return result;
 }
 
-
-
+function ensureNumbersOnly (arr) {
+  arr.forEach((item) => {
+    if (typeof item !== 'number')
+      throw new TypeError('Array must contain only numbers');
+  })
+  return true;
+}
 
 
 module.exports = {
