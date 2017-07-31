@@ -1,3 +1,15 @@
+/**
+* Verifies if input is an arithmetric progression or a geometric progression
+* leveraging helper functions
+* @static
+* @param {array} [numbers] an array of numbers.
+* @return {String|Number}
+* @example
+* aritGeo([1, 2, 4, 8]) //-> 'geometric'
+*
+* aritGeo([1,2,3,4,5]) //-> 'arithmetric'
+*/
+
 function aritGeo (arr) {
   if (!Array.isArray(arr))
     throw new TypeError('arguement should be an array');
@@ -13,6 +25,14 @@ function aritGeo (arr) {
   return -1;
 }
 
+
+/**
+* Verifies if input is an arithmetric progression.
+* @static
+* @param {array} [numbers] an array of numbers.
+* @return {Boolean}
+*/
+
 function isArithmetric (arr) {
   let start = arr[0];
   let difference = arr[1] - arr[0];
@@ -26,6 +46,14 @@ function isArithmetric (arr) {
   return result;
 }
 
+
+
+/**
+* Verifies if input is an geometric progression.
+* @static
+* @param {array} [numbers] an array of numbers.
+* @return {Boolean}
+*/
 
 function isGeometric (arr) {
   let start = arr[0]
