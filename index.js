@@ -17,11 +17,13 @@ function aritGeo (arr) {
     return 0;
   if (arr.length < 3)
     return -1;
-  if (isArithmetric(arr)){
-    return 'arithmetric';
+  if (ensureNumbersOnly(arr)) {
+    if (isArithmetric(arr)){
+      return 'arithmetric';
+    }
+    if (isGeometric(arr))
+      return 'geometric';
   }
-  if (isGeometric(arr))
-    return 'geometric';
   return -1;
 }
 
@@ -69,8 +71,12 @@ function isGeometric (arr) {
 }
 
 
+
+
+
 module.exports = {
   aritGeo,
   isArithmetric,
   isGeometric,
+  ensureNumbersOnly,
 }

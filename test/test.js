@@ -3,6 +3,7 @@ const expect = require('chai').expect;
 const aritGeo = require('../index').aritGeo;
 const isArithmetric = require('../index').isArithmetric;
 const isGeometric = require('../index').isGeometric;
+const ensureNumbersOnly = require('../index').ensureNumbersOnly;
 
 
 describe('aritGeo', function () {
@@ -64,6 +65,18 @@ describe('aritGeo helpers', function () {
     })
     it('should return true for valid input', function () {
       const result = isGeometric([1, 2, 4, 8]);
+      expect(result).to.equal(true);
+    })
+  })
+  describe('ensureNumbersOnly', function () {
+    it('should throw TypeError if input contains non-numbers', function () {
+      const result = function () {
+        return ensureNumbersOnly([1, 2, 'string']);
+      }
+      expect(result).to.throw(TypeError, 'Array must contain only numbers');
+    })
+    it('should return true for valid input', function () {
+      const result = ensureNumbersOnly([1, 2, 4, 8]);
       expect(result).to.equal(true);
     })
   })
