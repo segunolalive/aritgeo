@@ -70,6 +70,14 @@ function isGeometric (arr) {
   return result;
 }
 
+
+/**
+* Verifies if input is an is an array of numbers.
+* @static
+* @param {array}.
+* @return {Boolean}
+*/
+
 function ensureNumbersOnly (arr) {
   arr.forEach((item) => {
     if (typeof item !== 'number')
